@@ -1,11 +1,11 @@
-#!/usr/bin/php
 <?php
-
+//毫秒获取函数
 function getmicrotime(){
     list($usec, $sec) = explode(" ", microtime());
     return ((float)$usec + (float)$sec);
 }
 
+//单线程CURL抓取
 function http($url, $params, $method='get') {
     $result = array();
     $BeginTime = getmicrotime();
@@ -47,6 +47,7 @@ function http($url, $params, $method='get') {
 }
 
 
+//并发多线程CURL抓取
 function http_multi( $urls ){
     $mh = curl_multi_init();
     $handles = array();

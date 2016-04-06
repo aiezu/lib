@@ -1,5 +1,5 @@
 <?php
-class Db_Mysql {
+class mysql {
     private $handle = null;
     private $dbname = null;
     public static $query_num;
